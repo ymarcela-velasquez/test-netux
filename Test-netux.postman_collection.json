@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "70143d86-a954-4e69-9d73-0f8c7a37a743",
+		"name": "Test-netux",
+		"description": "Requests for the scheduling API ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PATIENT: post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Daniel",
+							"type": "text"
+						},
+						{
+							"key": "documentType",
+							"value": "CC",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"value": "1",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/patient",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROFESSIONAL: post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Yuly",
+							"type": "text"
+						},
+						{
+							"key": "documentType",
+							"value": "CC",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "specialty",
+							"value": "General",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/professional",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"professional"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATE: post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "patient",
+							"value": "5d9e23a215d6c928f873dbee",
+							"type": "text"
+						},
+						{
+							"key": "professional",
+							"value": "5d9e2db5b1dd6921e01cafcb",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2019-10-10T09:00",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/date",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"date"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATES: get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/dates",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATE: Patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/date/5d9e51c763693a159c913571",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"date",
+						"5d9e51c763693a159c913571"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATE: getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/dates/5d9e50f001e74e3268fca683",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dates",
+						"5d9e50f001e74e3268fca683"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATE: getByPatientId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/dates/patients/5d9e23a215d6c928f873dbee",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dates",
+						"patients",
+						"5d9e23a215d6c928f873dbee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATE: GetByProfessionalId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/dates/professionals/5d9e2db5b1dd6921e01cafc",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dates",
+						"professionals",
+						"5d9e2db5b1dd6921e01cafc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DATE: get appointments between two dates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/datesByDays?firstDate=2019-10-01&lastDate=2019-10-09",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"datesByDays"
+					],
+					"query": [
+						{
+							"key": "firstDate",
+							"value": "2019-10-01"
+						},
+						{
+							"key": "lastDate",
+							"value": "2019-10-09"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

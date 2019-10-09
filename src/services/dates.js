@@ -18,34 +18,43 @@ async function postDate(newDate) {
   return uploadDate;
 }
 
-async function updateDate(dateId){
-    const date = await dateSchema.findByIdAndUpdate(dateId,{ assistance: true });
-    return date;
+async function updateDate(dateId) {
+  const date = await dateSchema.findByIdAndUpdate(dateId, { assistance: true });
+  return date;
 }
 
-async function getDateById(dateId){
-    return await dateSchema.findById(dateId)
-                        .populate("patient")
-                        .populate("professional");
-}
-
-async function getDatesByPatient(patientId){
-    return await dateSchema.find({patient: patientId})
+async function getDateById(dateId) {
+  return await dateSchema
+    .findById(dateId)
     .populate("patient")
     .populate("professional");
 }
 
-async function getDatesByProfessional(professionalId){
-    return await dateSchema.find({professional: professionalId})
+async function getDatesByPatient(patientId) {
+  return await dateSchema
+    .find({ patient: patientId })
+    .populate("patient")
+    .populate("professional");
+}
+
+async function getDatesByProfessional(professionalId) {
+  return await dateSchema
+    .find({ professional: professionalId })
     .populate("patient")
     .populate("professional");
 }
 
 async function getDates() {
   return await dateSchema
-                .find()
-                .populate("patient")
-                .populate("professional")
+    .find()
+    .populate("patient")
+    .populate("professional");
+}
+
+async function getDateByDates(firstDate, lastDate) {
+  return await dateSchema.find({
+    date: { $lte: lastDate , $gte: firstDate }
+  });
 }
 
 module.exports = {
@@ -54,5 +63,6 @@ module.exports = {
   updateDate,
   getDateById,
   getDatesByPatient,
-  getDatesByProfessional
+  getDatesByProfessional,
+  getDateByDates
 };

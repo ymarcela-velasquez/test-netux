@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { postDate, getDates, updateDate, getDateById, getDatesByPatient, getDatesByProfessional }  = require('../services/dates');
+const { postDate, getDates, updateDate, getDateById, getDatesByPatient, getDatesByProfessional, getDateByDates }  = require('../services/dates');
 
 router.post('/date', async (req, res) => {
     try {
@@ -38,6 +38,19 @@ router.get('/dates/patients/:patientId', async (req, res) => {
     }
 })
 
+router.get('/datesByDays', async (req, res) => {
+    try {
+        const firstDate = new Date(String(req.query.firstDate));
+        const lastDate = new Date(String(req.query.lastDate));
+
+        const dates = await getDateByDates(firstDate, lastDate);
+        res.send(dates);
+    } catch (error) {
+        console.log(error)
+        res.send(error);
+    }
+})
+
 router.get('/dates/professionals/:professionalId', async (req, res) => {
     try {
         const dates = await getDatesByProfessional(req.params.professionalId);
@@ -55,5 +68,6 @@ router.patch('/date/:id', async (req, res) => {
         res.send(error);
     }
 })
+
 
 module.exports = router;
