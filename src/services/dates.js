@@ -2,6 +2,9 @@ const dateSchema = require("../models/dates");
 const patientSchema = require("../models/patient");
 const professionalSchema = require("../models/professional");
 
+
+/* Definition of mongoose schemas for database connection  */
+
 async function postDate(newDate) {
   const patientId = newDate.patient;
   const professionalId = newDate.professional;

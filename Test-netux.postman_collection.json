@@ -23,7 +23,7 @@
 					"urlencoded": [
 						{
 							"key": "name",
-							"value": "Daniel",
+							"value": "Laura",
 							"type": "text"
 						},
 						{
@@ -33,7 +33,7 @@
 						},
 						{
 							"key": "document",
-							"value": "1",
+							"value": "4",
 							"type": "text"
 						}
 					],
@@ -286,6 +286,51 @@
 							"key": "lastDate",
 							"value": "2019-10-09"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUDITOR: post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "David",
+							"type": "text"
+						},
+						{
+							"key": "documentType",
+							"value": "CC",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/auditor",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auditor"
 					]
 				}
 			},

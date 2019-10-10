@@ -5,6 +5,7 @@ const professionals = require("./professional");
 
 const Schema = mongoose.Schema;
 
+//Scheme to create an appointment
 let dateSchema = new Schema({
   patient:
     {

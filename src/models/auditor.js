@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+// Scheme to create an auditor
 let auditorSchema = new Schema({
   name: {
     type: String,
